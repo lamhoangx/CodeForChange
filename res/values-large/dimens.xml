@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- <dimen name="image_thumbnail_size_port">100dp</dimen> -->
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    
+    <dimen name="image_thumbnail_spacing_mcimg">5dp</dimen>
+    <dimen name="image_detail_pager_margin">80dp</dimen>
+    
+    <dimen name="thumb_width">200dp</dimen>
+    <dimen name="thumb_heght">250dp</dimen>
+    
+    <dimen name="slidingmenu_offset">300dp</dimen>
+
+    <integer name="num_cols">1</integer>
+
+</resources>

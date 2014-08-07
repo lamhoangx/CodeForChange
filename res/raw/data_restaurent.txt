@@ -1,0 +1,22 @@
+{
+  "restaurent": [
+    {
+      "name": "Paris Deli",
+      "adress": "6 Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội",
+      "image_res": "paris_deli",
+      "phone_number": "(04) 3934 5269",
+      "introduce": "Nhà hàng nằm tại vị trí trung tâm quận Hoàn Kiếm có thiết kế lịch sự, sang trọng, mang kiến trúc châu Âu
+Phục vụ các món Tây Âu như Mì Ý, Beefsteak, Món Pháp...
+Phù hợp để tiếp khách, gặp gỡ đối tác, ăn sang trọng, ăn cùng gia đình, thưởng thưởng thức nhạc sống"
+    },
+    {
+      "name": "Taboo Lounge & Bar",
+      "adress": "2 Thụy Khuê, Quận Tây Hồ, Hà Nội",
+      "image_res": "tabbo_lounge_bar",
+      "phone_number": "(04) 37 282 996 - (04) 37 286 062",
+      "introduce": "Là một con tàu nổi trên Hồ Tây, Taboo Lounge & Bar kiến trúc đẹp mắt, nơi thích hợp hẹn hò, tiếp khách hoặc đơn giản là thư giãn, ngắm cảnh
+Đa dạng các loại đồ uồng mát lạnh và thức ăn ngon, đặc biệt là các loại Cocktail
+Âm nhạc dịu nhẹ, phục vụ chu đáo"
+    }
+  ]
+}

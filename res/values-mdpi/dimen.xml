@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="img_size_quest">120dp</dimen>
+    
+    <dimen name="img_size_cell">100dp</dimen>
+    
+    <dimen name="margin_size_cell">8dp</dimen>
+</resources>

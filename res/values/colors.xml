@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#00FF00</color>
+    <color name="orange">#FFA500</color>
+    <color name="brown">#A52A2A</color>
+    <color name="grey">#C0C0C0</color>
+    <color name="blue">#0000FF</color>
+    <color name="transparent">#00000000</color>
+    <color name="default_screen_bg">#20324a</color>
+    <color name="rounded_container_bg">#80000000</color>
+    <color name="rounded_container_border">#3b3f44</color>
+    <color name="light_gray_header_color">#646663</color>
+    <color name="pressed_inquirer">#CC385195</color>
+    
+    <color name="headline">#385195</color>
+    <color name="text_normal">#666</color>
+    
+    <color name="bg_popup_shelf">#f7f7f8</color>
+    <color name="bg_popup_setting_pageview">#000000</color>
+    
+    <color name="grid_state_pressed">#BB7dbcd3</color>
+    <color name="grid_state_focused">#777dbcd3</color>
+    
+    <color name="bg_thumbnail_view">#99000000</color>
+    
+    <color name="bg_action_bar_e_reader">#CC3ba7d6</color>
+    <color name="bg_action_bar_e_reader_grid">#3ba7d6</color>
+    <color name="text_color_actionbar">#1273de</color>
+    
+    <color name="selected_row_listview_content">#d9d9d9</color>
+    
+    <color name="seperate_popup">#dddde7</color>
+    
+    <color name="text_color_blue">#2781f5</color>
+    <color name="bg_grid">#555555</color>
+    <color name="bg_login_pressed">#961c00</color>
+    <color name="bg_facebook">#2d4486</color>
+    <color name="bg_facebook_press">#172065</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    
+    <color name="bg_login">#ffcc00</color>
+    <color name="text_login">#555555</color>
+    <color name="bg_setting">#efeff4</color>
+    
+</resources>

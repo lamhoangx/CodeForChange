@@ -1,0 +1,15 @@
+{
+  "forum_post": [
+    {
+      "user_name": "Hoàng Lâm",
+      "status": "CodeForChange \n The first post. Demo",
+      "pic_post": "anh_demo"
+    },
+    {
+      
+      "user_name": "Android",
+      "status": "Đói bụng quá.",
+      "pic_post": "doi_bung"
+   }
+  ]
+}

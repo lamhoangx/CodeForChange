@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="color_names">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>White</item>
+        <item>Black</item>
+    </string-array>
+    
+    <string-array name="birds">
+        <item>Eagle</item>
+        <item>Flamingo</item>
+        <item>Heron</item>
+        <item>Ostrich</item>
+        <item>Peacock</item>
+        <item>Penguin</item>
+        <item>Toucan</item>
+        <item>Turkey</item>
+        <item>Vulture</item>
+    </string-array>
+    
+    
+    <string-array name="horoscope_items">
+        <item>Giới thiệu</item>
+        <item>Bảo Bình (21/1 - 19/2)</item>
+        <item>Bạch Dương (20/3 - 18/4)</item>
+        <item>Kim Ngưu (19/4 - 19/5)</item>
+        <item>Song Tử (20/5 - 20/6)</item>
+        <item>Cự Giải (21/6 - 21/7)</item>
+        <item>Sư Tử (22/7 - 22/8)</item>
+        <item>Xử Nữ (23/8 - 21/9)</item>
+        <item>Thiên Bình (22/9 - 22/10)</item>
+        <item>Hổ Cáp (23/10 - 21/11)</item>
+        <item>Nhân Mã (22/11 - 21/12)</item>
+        <item>Ma Kết (22/12 - 20/1)</item>
+    </string-array>
+
+    <string-array name="birds_img">
+        <item>@drawable/eagle</item>
+        <item>@drawable/flamingo</item>
+        <item>@drawable/heron</item>
+        <item>@drawable/ostrich</item>
+        <item>@drawable/peacock</item>
+        <item>@drawable/penguin</item>
+        <item>@drawable/toucan</item>
+        <item>@drawable/turkey</item>
+        <item>@drawable/vulture</item>
+    </string-array>
+
+</resources>

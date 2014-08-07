@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgRestaurent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imgRestaurent" >
+
+        <LinearLayout
+            android:id="@+id/llItemRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:id="@+id/tvNameRestaurent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="Name Restaurent"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumberRestaurent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:lines="1"
+                android:text="Phone Number Restaurent" />
+
+            <TextView
+                android:id="@+id/tvInfoRestaurent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="4"
+                android:text="Info Restaurent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgRestaurent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_alignLeft="@+id/llItemRes"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/linearLayout1"
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/ic_launcher" />
+
+</RelativeLayout>
