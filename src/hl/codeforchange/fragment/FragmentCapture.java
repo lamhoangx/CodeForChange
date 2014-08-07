@@ -1,6 +1,7 @@
 package hl.codeforchange.fragment;
 
 import hl.codeforchange.activity.R;
+import hl.codeforchange.postftp.FTPUploadFile;
 import hl.codeforchange.utils.CacheVariant;
 
 import java.io.File;
@@ -43,7 +44,7 @@ public class FragmentCapture extends SherlockFragment implements
 			imageUriQrCode = null;
 	public static ImageView showImg = null;
 	public static Context activity;
-
+	private Button btnPostData;
 
 	private enum CAPTURE_PICTURE_TYPE {
 		AFTER, BEFORE, QRCODE, NONE
@@ -62,15 +63,16 @@ public class FragmentCapture extends SherlockFragment implements
 
 	public void loadImageCapture() {
 		if (!CacheVariant.PATH_IMG_AFTER.equals("")) {
-			ImageLoader.getInstance().displayImage(CacheVariant.PATH_IMG_AFTER, imgAfter);
+			ImageLoader.getInstance().displayImage(
+					"file://" + CacheVariant.PATH_IMG_AFTER, imgAfter);
 		}
 		if (!CacheVariant.PATH_IMG_BEFORE.equals("")) {
-			ImageLoader.getInstance().displayImage(CacheVariant.PATH_IMG_BEFORE,
-					imgBefore);
+			ImageLoader.getInstance().displayImage(
+					"file://" + CacheVariant.PATH_IMG_BEFORE, imgBefore);
 		}
 		if (!CacheVariant.PATH_IMG_QRCODE.equals("")) {
-			ImageLoader.getInstance().displayImage(CacheVariant.PATH_IMG_QRCODE,
-					imgInfoQRcode);
+			ImageLoader.getInstance().displayImage(
+					"file://" + CacheVariant.PATH_IMG_QRCODE, imgInfoQRcode);
 		}
 		captureType = CAPTURE_PICTURE_TYPE.NONE;
 	}
@@ -78,7 +80,7 @@ public class FragmentCapture extends SherlockFragment implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 	}
 
 	@Override
@@ -87,6 +89,7 @@ public class FragmentCapture extends SherlockFragment implements
 		v = inflater.inflate(R.layout.fragment_capture_picture, container,
 				false);
 
+		btnPostData = (Button) v.findViewById(R.id.btnPostToServer);
 		imgInfoQRcode = (ImageView) v.findViewById(R.id.imgQRCode);
 		// image view
 		imgAfter = (ImageView) v.findViewById(R.id.imgAfter);
@@ -95,15 +98,19 @@ public class FragmentCapture extends SherlockFragment implements
 		imgAfter.setOnClickListener(this);
 		imgBefore.setOnClickListener(this);
 		imgInfoQRcode.setOnClickListener(this);
+		btnPostData.setOnClickListener(this);
 		captureType = CAPTURE_PICTURE_TYPE.NONE;
 		loadImageCapture();
 		return v;
 	}
 
-	@Override
-	public void onResume() {
-
-		super.onResume();
+	public void postDataToServer() {
+		if (!CacheVariant.PATH_IMG_AFTER.equals("")
+				&& !CacheVariant.PATH_IMG_BEFORE.equals("")
+				&& !CacheVariant.PATH_IMG_QRCODE.equals("")) {
+			FTPUploadFile.uploadFileData(CacheVariant.PATH_IMG_AFTER,
+					"First.jpg", "user", "user");
+		}
 	}
 
 	@Override
@@ -124,6 +131,9 @@ public class FragmentCapture extends SherlockFragment implements
 					CAPTURE_IMAGE_QRCODE_REQUEST_CODE, imageUriQrCode);
 			captureType = CAPTURE_PICTURE_TYPE.QRCODE;
 			break;
+		case R.id.btnPostToServer:
+			postDataToServer();
+			break;
 		}
 
 	}
@@ -131,14 +141,16 @@ public class FragmentCapture extends SherlockFragment implements
 	private void capturePicture(Context context, int requestCode,
 			Uri imageUriIndex) {
 
-		if (imageUri == null) {
-			imageUri = getImageFileUri();
-		}
-
-		imageUri = context.getContentResolver().insert(
-				MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-				new ContentValues());
-
+		// if (imageUri == null) {
+		// imageUri = getImageFileUri();
+		// }
+		 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+		 .format(new Date());
+		 ContentValues values = new ContentValues();
+		 values.put(MediaStore.Images.Media.DATA, timeStamp);
+		 imageUri = context.getContentResolver().insert(
+		 MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+//		imageUri = getImageFileUri();
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 		startActivityForResult(intent, requestCode);
@@ -169,7 +181,7 @@ public class FragmentCapture extends SherlockFragment implements
 					&& requestCode == CAPTURE_IMAGE_AFTER_REQUEST_CODE) {
 				// Bitmap bitmap = BitmapFactory.decodeFile(photoFileName);
 				// imgAfter.setImageBitmap(bitmap);
-				CacheVariant.PATH_IMG_AFTER = "file://" + photoFileName;
+				CacheVariant.PATH_IMG_AFTER = photoFileName;
 				// ImageLoader.getInstance().displayImage(strPathImageAfter,
 				// imgAfter);
 				loadImageCapture();
@@ -178,7 +190,7 @@ public class FragmentCapture extends SherlockFragment implements
 					&& requestCode == CAPTURE_IMAGE_BEFORE_REQUEST_CODE) {
 				// Bitmap bitmap = BitmapFactory.decodeFile(photoFileName);
 				// imgBefore.setImageBitmap(bitmap);
-				CacheVariant.PATH_IMG_BEFORE = "file://" + photoFileName;
+				CacheVariant.PATH_IMG_BEFORE = photoFileName;
 				// ImageLoader.getInstance().displayImage(strPathImageBefore,
 				// imgBefore);
 				loadImageCapture();
@@ -187,7 +199,7 @@ public class FragmentCapture extends SherlockFragment implements
 					&& requestCode == CAPTURE_IMAGE_QRCODE_REQUEST_CODE) {
 				// Bitmap bitmap = BitmapFactory.decodeFile(photoFileName);
 				// imgInfoQRcode.setImageBitmap(bitmap);
-				CacheVariant.PATH_IMG_QRCODE = "file://" + photoFileName;
+				CacheVariant.PATH_IMG_QRCODE = photoFileName;
 				// ImageLoader.getInstance().displayImage(strPathImageQRCode,
 				// imgInfoQRcode);
 				loadImageCapture();
@@ -216,7 +228,7 @@ public class FragmentCapture extends SherlockFragment implements
 		imagePath = new File(
 				Environment
 						.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-				"Tuxuri");
+			"");
 		Log.d(tag, "Find " + imagePath.getAbsolutePath());
 		if (!imagePath.exists()) {
 			if (!imagePath.mkdirs()) {
