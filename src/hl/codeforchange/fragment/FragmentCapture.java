@@ -13,7 +13,18 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -58,6 +69,9 @@ public class FragmentCapture extends SherlockFragment implements
 	private String user = "u488574653";
 	private String pass = "code4change";
 
+	//Post
+	String LINK_POST = "http://swf.letsgeekaround.com/insert.php";
+	
 	private enum CAPTURE_PICTURE_TYPE {
 		AFTER, BEFORE, QRCODE, NONE
 	}
@@ -132,51 +146,55 @@ public class FragmentCapture extends SherlockFragment implements
 
 			// post to mysql
 			try {
-				String username = user;
-				String password = pass;
-				String link = "http://swf.letsgeekaround.com/insert.php";
-				String data = URLEncoder.encode("username", "UTF-8") + "="
-						+ URLEncoder.encode(username, "UTF-8");
-				// data += "&" + URLEncoder.encode("password", "UTF-8")
-				// + "=" + URLEncoder.encode(password, "UTF-8");
-				data += "&" + URLEncoder.encode("billcode", "UTF-8") + "="
-						+ URLEncoder.encode("10010110", "UTF-8");
-				data += "&" + URLEncoder.encode("price", "UTF-8") + "="
-						+ URLEncoder.encode("100000", "UTF-8");
-				data += "&"
-						+ URLEncoder.encode("pic1", "UTF-8")
-						+ "="
-						+ URLEncoder.encode("KFC_After_" + timeStamp + ".jpg",
-								"UTF-8");
-				data += "&"
-						+ URLEncoder.encode("pic2", "UTF-8")
-						+ "="
-						+ URLEncoder.encode("KFC_Before_" + timeStamp + ".jpg",
-								"UTF-8");
-				data += "&"
-						+ URLEncoder.encode("pic3", "UTF-8")
-						+ "="
-						+ URLEncoder.encode("KFC_QRCode_" + timeStamp + ".jpg",
-								"UTF-8");
-				URL url = new URL(link);
-				URLConnection conn = url.openConnection();
-				conn.setDoOutput(true);
-				OutputStreamWriter wr = new OutputStreamWriter(
-						conn.getOutputStream());
-				wr.write(data);
-				wr.flush();
-				// BufferedReader reader = new BufferedReader
-				// (new InputStreamReader(conn.getInputStream()));
-				// StringBuilder sb = new StringBuilder();
-				// String line = null;
-				// // Read Server Response
-				// while((line = reader.readLine()) != null)
-				// {
-				// sb.append(line);
-				// break;
-				// }
-				// String dataRe = sb.toString();
-				// Log.i("Data", dataRe);
+				
+				new PostData().execute("hlam","10010110","100000",
+								"KFC_After_" + timeStamp + ".jpg",
+								"KFC_Before_" + timeStamp + ".jpg",
+								"KFC_QRCode_" + timeStamp + ".jpg");
+				
+//				//String link = "http://swf.letsgeekaround.com/insert.php";
+//				String data = URLEncoder.encode("username", "UTF-8") + "="
+//						+ URLEncoder.encode(username, "UTF-8");
+//				// data += "&" + URLEncoder.encode("password", "UTF-8")
+//				// + "=" + URLEncoder.encode(password, "UTF-8");
+//				data += "&" + URLEncoder.encode("billcode", "UTF-8") + "="
+//						+ URLEncoder.encode("10010110", "UTF-8");
+//				data += "&" + URLEncoder.encode("price", "UTF-8") + "="
+//						+ URLEncoder.encode("100000", "UTF-8");
+//				data += "&"
+//						+ URLEncoder.encode("pic1", "UTF-8")
+//						+ "="
+//						+ URLEncoder.encode("KFC_After_" + timeStamp + ".jpg",
+//								"UTF-8");
+//				data += "&"
+//						+ URLEncoder.encode("pic2", "UTF-8")
+//						+ "="
+//						+ URLEncoder.encode("KFC_Before_" + timeStamp + ".jpg",
+//								"UTF-8");
+//				data += "&"
+//						+ URLEncoder.encode("pic3", "UTF-8")
+//						+ "="
+//						+ URLEncoder.encode("KFC_QRCode_" + timeStamp + ".jpg",
+//								"UTF-8");
+//				URL url = new URL(LINK_POST);
+//				URLConnection conn = url.openConnection();
+//				conn.setDoOutput(true);
+//				OutputStreamWriter wr = new OutputStreamWriter(
+//						conn.getOutputStream());
+//				wr.write(data);
+//				wr.flush();
+//				// BufferedReader reader = new BufferedReader
+//				// (new InputStreamReader(conn.getInputStream()));
+//				// StringBuilder sb = new StringBuilder();
+//				// String line = null;
+//				// // Read Server Response
+//				// while((line = reader.readLine()) != null)
+//				// {
+//				// sb.append(line);
+//				// break;
+//				// }
+//				// String dataRe = sb.toString();
+//				// Log.i("Data", dataRe);
 			} catch (Exception e) {
 				Log.i("MySQL ", new String("Exception: " + e.getMessage()));
 			}
@@ -184,6 +202,103 @@ public class FragmentCapture extends SherlockFragment implements
 		}
 	}
 
+	
+
+	public class PostData extends AsyncTask<String, Integer, String> {
+		HttpClient httpclient;
+		HttpPost httppost;
+		HttpResponse response;
+		BufferedReader rd = null;
+		
+		@Override
+		protected String doInBackground(String... args) {
+			postData(args[0], args[1], args[2], args[3], args[4],args[5]);
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(String resultData) {
+			Toast.makeText(activity,"Upload MySQL finish ", Toast.LENGTH_SHORT).show();
+			
+		}
+		
+		@Override
+		protected void onPreExecute() {
+			
+			
+			super.onPreExecute();
+		}
+
+		//
+		public void postData(String username, String billcode,String price,String pic1, String pic2, String pic3 ) {
+			
+			// Create a new HttpClient and Post Header
+			httpclient = new DefaultHttpClient();
+			httppost = new HttpPost(LINK_POST);
+			
+			try {
+				// Add your data
+				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+				nameValuePairs.add(new BasicNameValuePair("username",
+						username));
+				nameValuePairs.add(new BasicNameValuePair("billcode",
+						billcode));
+				nameValuePairs.add(new BasicNameValuePair("price",
+						price));
+				nameValuePairs.add(new BasicNameValuePair("pic1",
+						pic1));
+				nameValuePairs.add(new BasicNameValuePair("pic2",
+						pic2));
+				nameValuePairs.add(new BasicNameValuePair("pic3",
+						pic3));
+				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+				
+				// Execute HTTP Post Request
+				response = httpclient.execute(httppost);
+				
+			} catch (ClientProtocolException e) {
+				// TODO Auto-generated catch block
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+			}
+		}
+
+	}
+	public void postData(String username, String billcode,String price,String pic1, String pic2, String pic3 ) {
+		HttpClient httpclient;
+		HttpPost httppost;
+		HttpResponse response;
+		// Create a new HttpClient and Post Header
+		httpclient = new DefaultHttpClient();
+		httppost = new HttpPost(LINK_POST);
+		
+		try {
+			// Add your data
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+			nameValuePairs.add(new BasicNameValuePair("username",
+					username));
+			nameValuePairs.add(new BasicNameValuePair("billcode",
+					billcode));
+			nameValuePairs.add(new BasicNameValuePair("price",
+					price));
+			nameValuePairs.add(new BasicNameValuePair("pic1",
+					pic1));
+			nameValuePairs.add(new BasicNameValuePair("pic2",
+					pic2));
+			nameValuePairs.add(new BasicNameValuePair("pic3",
+					pic3));
+			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+			
+			// Execute HTTP Post Request
+			response = httpclient.execute(httppost);
+			
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		}
+	}
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
