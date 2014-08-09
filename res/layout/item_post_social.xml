@@ -19,24 +19,32 @@
         android:layout_marginBottom="10dp"
         android:background="@color/grey" />
 
-    <TextView
-        android:id="@+id/tvPostInfo_Social"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Status" />
+        android:layout_height="wrap_content" >
 
-    <ImageView
-        android:id="@+id/imgPost"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_launcher" />
+        <TextView
+            android:id="@+id/tvPostInfo_Social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical= "true"
+            android:layout_marginBottom="10dp"
+            android:text="Status" />
+
+        <ImageView
+            android:id="@+id/imgPost"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_launcher" />
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/llComment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,7 +71,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
         </ListView>
-
     </LinearLayout>
 
 </LinearLayout>

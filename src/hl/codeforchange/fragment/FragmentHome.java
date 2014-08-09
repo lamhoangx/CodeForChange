@@ -71,6 +71,9 @@ public class FragmentHome extends SherlockFragment implements OnClickListener {
 		
 		registerForContextMenu(lvInfoRestaurents);
 		
+		ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header_home, lvInfoRestaurents,false);
+		lvInfoRestaurents.addHeaderView(header);
+		
 		adapter = new RestaurentAdapter(getActivity(), iTems, getResources());
 		
 		lvInfoRestaurents.setAdapter(adapter);

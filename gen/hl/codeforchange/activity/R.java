@@ -1328,21 +1328,21 @@ containing a value of this type.
         public static final int action_settings=0x7f070062;
         public static final int both=0x7f070003;
         public static final int btnComment=0x7f070059;
-        public static final int btnPostImage=0x7f070048;
-        public static final int btnPostStatus=0x7f070047;
+        public static final int btnPostImage=0x7f07004a;
+        public static final int btnPostStatus=0x7f070049;
         public static final int btnPostToServer=0x7f070045;
         public static final int colors=0x7f070040;
         public static final int content_frame=0x7f070061;
         public static final int disableHome=0x7f070015;
         public static final int disabled=0x7f070000;
         public static final int edComment=0x7f070058;
-        public static final int edPostStatus=0x7f070046;
+        public static final int edPostStatus=0x7f070048;
         public static final int edit_query=0x7f070032;
         public static final int fl_inner=0x7f07005b;
         public static final int flip=0x7f070008;
         public static final int gridview=0x7f070009;
         public static final int homeAsUp=0x7f070012;
-        public static final int imageView1=0x7f07004a;
+        public static final int imageView1=0x7f07004b;
         public static final int imgAfter=0x7f070042;
         public static final int imgBefore=0x7f070043;
         public static final int imgPost=0x7f070056;
@@ -1362,8 +1362,8 @@ containing a value of this type.
         public static final int pullFromEnd=0x7f070002;
         public static final int pullFromStart=0x7f070001;
         public static final int pullUpFromBottom=0x7f070006;
-        public static final int pull_refresh_forum=0x7f070049;
-        public static final int pull_refresh_list=0x7f07004b;
+        public static final int pull_refresh_forum=0x7f070046;
+        public static final int pull_refresh_list=0x7f070047;
         public static final int pull_to_refresh_image=0x7f07005c;
         public static final int pull_to_refresh_progress=0x7f07005d;
         public static final int pull_to_refresh_sub_text=0x7f07005f;
@@ -1418,30 +1418,30 @@ containing a value of this type.
         public static final int fragment_forum=0x7f030018;
         public static final int fragment_home=0x7f030019;
         public static final int fragment_main=0x7f03001a;
-        public static final int item_comment=0x7f03001b;
-        public static final int item_info_restaurent=0x7f03001c;
-        public static final int item_post_social=0x7f03001d;
-        public static final int pull_to_refresh_header_horizontal=0x7f03001e;
-        public static final int pull_to_refresh_header_vertical=0x7f03001f;
-        public static final int responsive_content_frame=0x7f030020;
-        public static final int sherlock_spinner_dropdown_item=0x7f030021;
-        public static final int sherlock_spinner_item=0x7f030022;
+        public static final int header_forum=0x7f03001b;
+        public static final int header_home=0x7f03001c;
+        public static final int item_comment=0x7f03001d;
+        public static final int item_info_restaurent=0x7f03001e;
+        public static final int item_post_social=0x7f03001f;
+        public static final int pull_to_refresh_header_horizontal=0x7f030020;
+        public static final int pull_to_refresh_header_vertical=0x7f030021;
+        public static final int responsive_content_frame=0x7f030022;
+        public static final int sherlock_spinner_dropdown_item=0x7f030023;
+        public static final int sherlock_spinner_item=0x7f030024;
     }
     public static final class menu {
         public static final int main=0x7f0f0000;
     }
     public static final class raw {
-        public static final int anh_demo=0x7f060000;
-        public static final int data_post_forum=0x7f060001;
-        public static final int data_restaurent=0x7f060002;
-        public static final int doi_bung=0x7f060003;
-        public static final int game_correct=0x7f060004;
-        public static final int game_wrong=0x7f060005;
-        public static final int paris_deli=0x7f060006;
-        public static final int pull_event=0x7f060007;
-        public static final int refreshing_sound=0x7f060008;
-        public static final int reset_sound=0x7f060009;
-        public static final int tabbo_lounge_bar=0x7f06000a;
+        public static final int data_post_forum=0x7f060000;
+        public static final int data_restaurent=0x7f060001;
+        public static final int game_correct=0x7f060002;
+        public static final int game_wrong=0x7f060003;
+        public static final int paris_deli=0x7f060004;
+        public static final int pull_event=0x7f060005;
+        public static final int refreshing_sound=0x7f060006;
+        public static final int reset_sound=0x7f060007;
+        public static final int tabbo_lounge_bar=0x7f060008;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

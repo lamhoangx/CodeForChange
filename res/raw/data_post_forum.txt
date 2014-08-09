@@ -3,13 +3,13 @@
     {
       "user_name": "Hoàng Lâm",
       "status": "CodeForChange \n The first post. Demo",
-      "pic_post": "anh_demo"
+      "pic_post": "assets://anh_demo.jpg"
     },
     {
       
       "user_name": "Android",
       "status": "Đói bụng quá.",
-      "pic_post": "doi_bung"
+      "pic_post": "assets://doi_bung.jpg"
    }
   ]
 }
