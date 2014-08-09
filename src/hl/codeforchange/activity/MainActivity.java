@@ -29,8 +29,8 @@ import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 public class MainActivity extends SherlockFragmentActivity {
 	private static final String TAG = "MainActivity";
 	
-	private static final String[] CONTENT = new String[] { "Home", "UpPicture",
-			"Forum", "Profile" };
+	private static final String[] CONTENT = new String[] { "Nhà Hàng", "Nhận quà",
+			"Chia Sẻ", "Cá Nhân" };
 	private static final int[] ICONS = new int[] { R.drawable.icon_home,
 			R.drawable.icon_bell, R.drawable.icon_learn,
 			R.drawable.icon_settings, };
@@ -68,7 +68,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		pager.setPageMargin(pageMargin);
 		
 		tabs.setViewPager(pager);
-		getSupportActionBar().setTitle("CodeForChange " + CONTENT[0]);
+		getSupportActionBar().setTitle("StopwastingFood");
 		getSupportActionBar().setIcon(ICONS[0]);
 		pager.setCurrentItem(0);
 		tabs.setOnPageChangeListener(new OnPageChangeListener() {
@@ -77,7 +77,7 @@ public class MainActivity extends SherlockFragmentActivity {
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
 				getSupportActionBar()
-						.setTitle("CodeForChange " + CONTENT[arg0]);
+						.setTitle("StopwastingFood");
 				getSupportActionBar().setIcon(ICONS[arg0]);
 			}
 			

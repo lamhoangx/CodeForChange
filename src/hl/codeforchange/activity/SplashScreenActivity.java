@@ -18,7 +18,7 @@ public class SplashScreenActivity extends Activity {
 	
 	private static final String TAG = "SplashScreen";
 	// Splash screen timer
-	private static int SPLASH_TIME_OUT = 100;
+	private static int SPLASH_TIME_OUT = 1000;
 	private final boolean mSigned = false;
 	
 	@Override

@@ -30,6 +30,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.google.gson.Gson;
@@ -195,7 +196,8 @@ public class FragmentForum extends SherlockFragment implements OnClickListener {
 		int id = v.getId();
 		if (id == R.id.btnPostImage) {
 			capturePicture(getActivity(), 100);
-		} else if (id == R.id.btnPostStatus
+		}
+			if (id == R.id.btnPostStatus
 				&& !edStatusPost.getText().toString().equals("")
 				&& !strPathImagePost.equals("")) {
 			ItemForum itemF = new ItemForum();
@@ -204,9 +206,12 @@ public class FragmentForum extends SherlockFragment implements OnClickListener {
 			itemF.setPic_post("file://"+strPathImagePost);
 			edStatusPost.setText("");
 
-			itemForum.add(itemF);
+			itemForum.add(0, itemF);
+//			itemForum.add(itemF);
 			adapter.notifyDataSetChanged();
 			lvForum.setAdapter(adapter);
+		}else {
+			Toast.makeText(getActivity(), "Chưa có hình ảnh. Kiểm tra lại! ", Toast.LENGTH_SHORT).show();
 		}
 
 	}

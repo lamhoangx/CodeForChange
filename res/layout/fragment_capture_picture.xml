@@ -8,6 +8,7 @@
         android:id="@+id/llMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="5dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
@@ -18,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/after" />
 
         <ImageView
             android:id="@+id/imgBefore"
@@ -27,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/before" />
 
         <ImageView
             android:id="@+id/imgQRCode"
@@ -36,7 +37,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/bill" />
     </LinearLayout>
 
     <Button
