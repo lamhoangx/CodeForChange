@@ -3,50 +3,50 @@
     {
       "user_name": "Bánh bông lan",
       "status": "Do sự vận động khách quan của quy luật tự nhiên nên mình không lường trước được số lượng bánh cần làm cho gia đình. Tình hình bây giờ rất căng thẳng, do cung đã vượt cầu nên nguy cơ khủng hoảng thừa trong gia đình có nguy cơ leo thang. Nhằm tránh tình trạng xung đột trên có thể lan rộng toàn thế giới, gia đình mình xin được share bớt 10 cái bánh cho bạn nào có nhu cầu. Xin cảm ơn.",
-      "pic_post": "bonglan.jpg",
-      " date": " 05-08-2014 "
+      "pic_post": "assets://bonglan.jpg",
+      "date": " 05-08-2014 "
     },
     {
       "user_name": "Xoài",
       "status": "Do quê em là một vùng chuyên trồng về cây xoài nên có thể nói xoài là một loại quả đặc sản của quê em, tình hình dạo này xoài quê em sản xuất với số lượng khá lớn nên có phần dư thừa chính vì vậy em xin được chia sẻ bớt tầm 5 kg xoài .ban nào có nhu cầu thì liên hệ nhé .",
       "pic_post": "assets://xoai.jpg",
-      "date ": " 06-08-2014 "
+      "date": " 06-08-2014 "
     },
     {
       "user_name": "Sữa mộc châu",
       "status": "Tình hình là gần đây đang có dự án cung cấp sữa vào bữa ăn nhẹ cho các em học sinh cấp 1 ở một số trường học ở nông thôn .Đây là một dự án mẫu về việc tạo ra bữa ăn nhẹ giữa các buổi học của học sinh do đó số lượng sữa cung cấp cho các trường còn dư ra một số ít, cụ thể khoảng 10 thùng sữa Mộc Châu.Bạn nào có nhu cầu vui lòng liên hệ. Xin cảm ơn ",
       "pic_post": "assets://sua.jpg",
-      "date ": " 07-08-2014 "
+      "date": " 07-08-2014 "
     },
     {
       "user_name": "Đồ ăn sinh nhật",
       "status": "Vừa rồi là sinh nhật của em, hôm tổ chức sinh nhật sau khi liên hoan em có thừa 1 số lượng hoa quả, ai có nhu cầu thì liền hệ nhé",
       "pic_post": "assets://sua.jpg",
-      "date ": " 07-08-2014 "
+      "date": " 07-08-2014 "
     },
     {
       "user_name": "Bánh kẹo tết",
       "status": "Tết nguyên đán vừa qua nhà em có mua khá nhiều bánh kẹo, sau khi tết nguyên đán kết thúc nhà em có thừa 1 số lượng bánh kẹo, ai có nhu cầu vui lòng liên hệ.Xin cảm ơn",
       "pic_post": "assets://banhkeo.jpg",
-      "date ": " 03-03-2014 "
+      "date": " 03-03-2014 "
     },
     {
       "user_name": "Bánh bao",
       "status": "Hiện nay gia đình minh đang định mở quán bán bánh bao đang trong giai đoạn làm mẫu các loại bánh nên có thừa một số lượng bánh bao, bạn nào có nhu cầu thì liên hệ nhé ",
       "pic_post": "assets://banhbao.jpg",
-      "date ": " 05-07-2014 "
+      "date": " 05-07-2014 "
     },
     {
       "user_name": "Cơm hộp cho thí sinh ",
       "status": "Trong chiến dịch tiếp sức mùa thi đoàn trường chúng tôi có tổ chức phát cơm hộp cho các thi sinh nên hiện tại có dư ra 1 số lượng cơm hộp bạn nào có nhu cầu sử dụng xin liên hệ nhanh với chúng tôi ",
       "pic_post": "assets://comhop.jpg",
-      "date ": " 15-06-2014 "
+      "date": " 15-06-2014 "
     },
     {
       "user_name": "Mì ổ ",
       "status": "Do không ước tính được số bánh mì cần bán trong thời gian gần đây nên gia đình mình có thừa 1 số lượng bánh mì vì vậy bạn nào có nhu cầu xin liên hệ với gia đình mình nhé ",
       "pic_post": "assets://banhmi.jpg",
-      "date ": " 09-04-2014 "
+      "date": " 09-04-2014 "
     }
   ]
 }

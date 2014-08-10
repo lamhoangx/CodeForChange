@@ -60,12 +60,14 @@ public class ForumAdapter extends BaseAdapter implements OnClickListener {
 			holder = new ViewHolder();
 			holder.text = (TextView) vi.findViewById(R.id.tvNameUser);
 			holder.text2 = (TextView) vi.findViewById(R.id.tvPostInfo_Social);
+			holder.text3 = (TextView) vi.findViewById(R.id.tvDatePost);
 			holder.image = (ImageView) vi.findViewById(R.id.imgPost);
 
 			llComment = (LinearLayout) vi.findViewById(R.id.llComment);
 			edComment = (EditText) vi.findViewById(R.id.edComment);
 			btnComment = (Button) vi.findViewById(R.id.btnComment);
 			lvComment = (ListView) vi.findViewById(R.id.lvComment);
+			
 
 			vi.setTag(holder);
 		} else {
@@ -79,7 +81,8 @@ public class ForumAdapter extends BaseAdapter implements OnClickListener {
 
 			holder.text.setText(itemPost.getUser_name());
 			holder.text2.setText(itemPost.getStatus());
-
+			holder.text3.setText(itemPost.getDate());
+			
 			ImageLoader.getInstance().displayImage(itemPost.getPic_post(), holder.image);
 
 		}
@@ -94,7 +97,7 @@ public class ForumAdapter extends BaseAdapter implements OnClickListener {
 					itemComm.setUser_name("User Name");
 					itemComm.setStatus_comment(edComment.getText().toString());
 					edComment.setText("");
-
+					
 					arrItemComment.add(itemComm);
 					adapterComment.notifyDataSetChanged();
 					lvComment.setAdapter(adapterComment);

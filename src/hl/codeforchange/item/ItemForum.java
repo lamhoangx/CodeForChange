@@ -4,7 +4,15 @@ public class ItemForum {
 	public String user_name;
 	public String status;
 	public String pic_post;
-	
+	public String date;
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	public String getUser_name() {
 		return user_name;
 	}

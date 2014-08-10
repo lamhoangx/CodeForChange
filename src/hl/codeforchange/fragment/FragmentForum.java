@@ -197,21 +197,26 @@ public class FragmentForum extends SherlockFragment implements OnClickListener {
 		if (id == R.id.btnPostImage) {
 			capturePicture(getActivity(), 100);
 		}
-			if (id == R.id.btnPostStatus
+		if (id == R.id.btnPostStatus
 				&& !edStatusPost.getText().toString().equals("")
 				&& !strPathImagePost.equals("")) {
+
+			String timeStamp = new SimpleDateFormat("dd-MM-yyyy")
+					.format(new Date());
 			ItemForum itemF = new ItemForum();
 			itemF.setUser_name(getString(R.string.user_name_test));
 			itemF.setStatus(edStatusPost.getText().toString());
-			itemF.setPic_post("file://"+strPathImagePost);
+			itemF.setPic_post("file://" + strPathImagePost);
+			itemF.setDate(timeStamp);
 			edStatusPost.setText("");
 
 			itemForum.add(0, itemF);
-//			itemForum.add(itemF);
+			// itemForum.add(itemF);
 			adapter.notifyDataSetChanged();
 			lvForum.setAdapter(adapter);
-		}else {
-			Toast.makeText(getActivity(), "Chưa có hình ảnh. Kiểm tra lại! ", Toast.LENGTH_SHORT).show();
+		} else {
+			Toast.makeText(getActivity(), "Chưa có hình ảnh. Kiểm tra lại! ",
+					Toast.LENGTH_SHORT).show();
 		}
 
 	}

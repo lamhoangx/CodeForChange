@@ -5,13 +5,31 @@
     android:orientation="vertical"
     android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/tvNameUser"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="User Name"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:layout_height="wrap_content" 
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvNameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="User Name"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/tvDatePost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft=" 20dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/tvNameUser"
+            android:text="Date"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -20,21 +38,22 @@
         android:background="@color/grey" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/tvPostInfo_Social"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical= "true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/imgPost"
             android:text="Status" />
 
         <ImageView
             android:id="@+id/imgPost"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_launcher" />
     </RelativeLayout>
